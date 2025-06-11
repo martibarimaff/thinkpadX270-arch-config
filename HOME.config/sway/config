@@ -32,7 +32,7 @@ exec swayidle -w \
 set $term alacritty
 
 # Your preferred application launcher (Deafault is: wmenu-run)
-set $menu wofi --show run
+set $menu wofi --show drun
 
 # Support for X applications
 xwayland enable
@@ -88,8 +88,11 @@ font monospace 20
 
 # Border
 default_border pixel 2
-default_floating_border normal
+default_floating_border pixel 2
 smart_borders on
+
+# TitleBar Border
+#titlebar_border_thickness 
 
 # Questo non so cosa faccia:
 default_orientation auto
@@ -98,6 +101,9 @@ default_orientation auto
 workspace_layout default
 
 gaps inner 2
+
+
+popup_during_fullscreen smart
 
 
 ################ Key Bindings
@@ -111,7 +117,7 @@ gaps inner 2
     bindsym $mod+Shift+BackSpace kill
 
     # Start your launcher (wofi)
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -188,10 +194,10 @@ gaps inner 2
     bindsym $mod+F11 fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+d floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+d focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -228,10 +234,18 @@ bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
+
     #Open Firefox con la stellina
-    bindsym --locked XF86Favorites exec firefox
+    bindsym XF86Favorites exec firefox
+
+    #Open ide (code-OSS)
+    bindsym $mod+c exec code
+
+    #Open file explorer (Nemo)
+    bindsym $mod+f exec nemo
 
     bindsym --locked $mod+Control+Delete exec shutdown now
+    bindsym --locked $mod+Control+r exec reboot
 
     # Special keys to adjust volume via PulseAudio
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
@@ -253,6 +267,14 @@ bindsym $mod+r mode "resize"
 bar {
      swaybar_command waybar
 }
+
+################ Esecuzione polkit authentication agent
+
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+################ Esecuzione Autotiling
+
+exec autotiling
 
 ################ Include (default config i guess?)
 
