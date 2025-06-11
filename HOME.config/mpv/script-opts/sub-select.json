@@ -1,0 +1,17 @@
+[
+    {
+        "alang": ["it"],
+        "slang": ["it"],
+        "condition": "sub.forced"
+    },
+	{
+        "alang": ["it"],
+        "slang": ["eng?", "us"],
+        "condition": "sub.forced"
+    },
+    {
+        "alang": ["jpn", "ja", "jp"],
+        "slang": ["it"],
+        "blacklist": [ "sign", "cartelli" ]
+    }
+]
