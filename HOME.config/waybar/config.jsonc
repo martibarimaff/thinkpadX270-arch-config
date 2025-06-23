@@ -15,7 +15,7 @@
         //"sway/mode",
         //"sway/scratchpad",
         //"custom/media",
-        "sway/window" // Nome del Tile in Focus
+        "sway/window" // Nome del Tile in Focus sium
     ],
     "modules-center": [
         "clock"
@@ -76,8 +76,23 @@
         "interval": 1,
         "format": "{:%H:%M:%S}",
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y}"
+        "tooltip-format": "<big>{:%A %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d/%m/%Y}",
+        "locale":"it_IT.UTF-8",
+        "months":{
+            "1":"Gennaio",
+            "2":"Febbraio",
+            "3":"Marzo",
+            "4":"Aprile",
+            "5":"Maggio",
+            "6":"Giugno",
+            "7":"Luglio",
+            "8":"Agosto",
+            "9":"Settembre",
+            "10":"Orrobre",
+            "11":"Novembre",
+            "12":"Dicembre"
+        }
     },
     "tray": {
         // "icon-size": 21,
@@ -127,7 +142,7 @@
         "on-click-middle": "exec firefox",
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "Eth  ",
-        //"tooltip-format": "{essid}  ",
+        "tooltip-format": "{essid}  ",
         "tooltip-format-disconnected": "none ⚠",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "none ⚠"//,
@@ -147,6 +162,7 @@
       }
     },
     "battery": {
+        "interval": 3,
         "bat": "BAT0",
         "states": {
             // "good": 95,
@@ -163,6 +179,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
+        "interval": 3,
         "bat": "BAT1",
         "states": {
             // "good": 95,
