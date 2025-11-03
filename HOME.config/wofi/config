@@ -2,3 +2,4 @@ width=860
 height=420
 mode=drun
 filter_rate=100
+insensitive=true
