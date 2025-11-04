@@ -24,6 +24,7 @@
         //"mpd",
         //"idle_inhibitor",
         "tray",
+        "bluetooth",
         "keyboard-state",
         "custom/|",
         "backlight", //Luminosità Schermo
@@ -98,7 +99,17 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "keyboard-state": {
+    "bluetooth": {
+	"controller": "archtino", // specify the alias of the controller if there are more than 1 on the system
+	"format": "",
+	"format-connected": " {num_connections}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-off": "",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "keyboard-state": { //user needs to be in the input group or something like that for it to work
         "capslock": true,
         "format": "{icon}",
         "format-icons": {
