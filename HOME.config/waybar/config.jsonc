@@ -13,7 +13,7 @@
     "modules-left": [
         "sway/workspaces", //I Warkspaces di sway
         //"sway/mode",
-        //"sway/scratchpad",
+        "sway/scratchpad",
         //"custom/media",
         "sway/window" // Nome del Tile in Focus sium
     ],
@@ -102,12 +102,12 @@
     "bluetooth": {
 	"controller": "archtino", // specify the alias of the controller if there are more than 1 on the system
 	"format": "",
-	"format-connected": " {num_connections}",
+	"format-connected": "",
     "format-disabled": "", // an empty format will hide the module
     "format-off": "",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	"tooltip-format-connected": "{controller_alias}\t{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}"
     },
     "keyboard-state": { //user needs to be in the input group or something like that for it to work
         "capslock": true,
@@ -154,9 +154,12 @@
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "Eth  ",
         "tooltip-format": "{essid}  ",
-        "tooltip-format-disconnected": "none ⚠",
+        //"tooltip-focused-connected": "{essid}  ",
+        "tooltip-format-disconnected": "none ",
+        "tooltip-format-disabled": " antenna disabled ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "none ⚠"//,
+        "format-disconnected": "none ",
+        "format-disabled": "sike ",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "power-profiles-daemon": {
