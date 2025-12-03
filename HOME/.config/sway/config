@@ -13,6 +13,7 @@ set $right Right
 
 
 ################ Idle configuration
+#exec systemd-inhibit --what=handle-lid-switch swaylock
 #
 # Example configuration: (To UNDERSTEND WHAT IT DOES)
 #
