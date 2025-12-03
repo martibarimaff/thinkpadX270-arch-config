@@ -1,0 +1,52 @@
+#ff7d25 #ffbd25 #ff2525 #4625ff #ed25ff
+image=/usr/share/sddm/themes/sddm-OW-theme/Backgrounds/ow-background.png
+indicator-caps-lock
+ignore-empty-password
+# daemonize
+
+disable-caps-lock-text
+# show-keyboard-layout
+# no-unlock-indicator
+# font=otf-mbm-ow-font
+
+### Default ###
+separator-color=000000
+inside-color=00000000
+line-color=000000
+ring-color=ff7d25
+text-color=ffffff00
+#HighLight
+key-hl-color=ff7d25
+bs-hl-color=4625ff
+
+### Clear ###
+inside-clear-color=00000000
+line-clear-color=000000
+ring-clear-color=ffbd25
+text-clear-color=ffffff00
+
+### CapsLock ###
+inside-caps-lock-color=ff252500
+line-caps-lock-color=000000
+ring-caps-lock-color=ff2525
+text-caps-lock-color=ffffff00
+#HighLight
+caps-lock-key-hl-color=ff7d25
+caps-lock-bs-hl-color=ff2525
+
+### Verifying ###
+inside-ver-color=ed25ff00
+line-ver-color=000000
+ring-ver-color=ed25ff
+text-ver-color=ffffff00
+
+### Wrong ###
+inside-wrong-color=ff2525
+line-wrong-color=000000
+ring-wrong-color=ff2525
+text-wrong-color=ffffff
+
+### Keyboard Layout ###
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=ff7d25
