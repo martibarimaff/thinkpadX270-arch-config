@@ -15,12 +15,16 @@ for file in ${homeConfApps[@]}; do
     echo
 done
 
-homeConfDir=(".swaylock/config" ".scripts/.")
+homeConfDir=(".swaylock/." ".scripts/.")
 for filepath in ${homeConfDir[@]}; do
     echo -e "${Title}$filepath${NoColor}"
 
     IFS='/'
+    #declare -a fparray
     read -ra fparray <<< $filepath
+    #for element in ${fparray[@]}; do
+    #    echo $element
+    #done
 
     mkdir -pv "$gitRepoPath/HOME/${fparray[0]}" && cp -rv "$HOME/$filepath" "$gitRepoPath/HOME/${fparray[0]}/"
     echo
