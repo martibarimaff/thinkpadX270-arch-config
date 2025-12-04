@@ -1,5 +1,5 @@
-#ff7d25 #ffbd25 #ff2525 #4625ff #ed25ff
-image=/usr/share/sddm/themes/sddm-OW-theme/Backgrounds/ow-background.png
+#ff7d25 #ff6325 #ffbd25 #ff2525 #256aff #ed25ff
+image=$HOME/.swaylock/ow-background-1080.png
 indicator-caps-lock
 ignore-empty-password
 # daemonize
@@ -17,12 +17,12 @@ ring-color=ff7d25
 text-color=ffffff00
 #HighLight
 key-hl-color=ff7d25
-bs-hl-color=4625ff
+bs-hl-color=ff5025
 
 ### Clear ###
 inside-clear-color=00000000
 line-clear-color=000000
-ring-clear-color=ffbd25
+ring-clear-color=256aff
 text-clear-color=ffffff00
 
 ### CapsLock ###
