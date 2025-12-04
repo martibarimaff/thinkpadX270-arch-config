@@ -1,0 +1,13 @@
+#! /bin/bash
+
+homeConfDir=(".swaylock/config" "balls/suck/*")
+for filepath in ${homeConfDir[@]}; do
+
+    IFS='/'
+    read -ra fparray <<< $filepath
+
+    for element in ${fparray[@]}; do
+        echo $element
+    done
+    echo "----"
+done

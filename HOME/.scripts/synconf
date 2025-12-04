@@ -1,0 +1,35 @@
+#! /bin/bash
+
+NoColor='\033[0m'               # No Color
+Title='\033[1;34m'              # Title
+LogText='\033[0;32m'            # LogText
+
+gitRepoPath="$HOME/GitHub/thinkpadX270-arch-config" 
+
+echo -e "${LogText}>> Copying configuration files for:${NoColor}"
+
+homeConfApps=("mpv" "alacritty" "sway" "waybar" "wofi")
+for file in ${homeConfApps[@]}; do
+    echo -e "${Title}$file${NoColor}"
+    cp -rv "$HOME/.config/$file" "$gitRepoPath/HOME/.config/"
+    echo
+done
+
+homeConfDir=(".swaylock/config" ".scripts/.")
+for filepath in ${homeConfDir[@]}; do
+    echo -e "${Title}$filepath${NoColor}"
+
+    IFS='/'
+    read -ra fparray <<< $filepath
+
+    mkdir -pv "$gitRepoPath/HOME/${fparray[0]}" && cp -rv "$HOME/$filepath" "$gitRepoPath/HOME/${fparray[0]}/"
+    echo
+done
+
+#cp -r $HOME/.config/mpv $gitRepoPath/HOME.config/
+#cp -r $HOME/.config/alacritty $gitRepoPath/HOME.config/
+#cp -r $HOME/.config/sway $gitRepoPath/HOME.config/
+#cp -r $HOME/.config/waybar $gitRepoPath/HOME.config/
+#cp -r $HOME/.config/wofi $gitRepoPath/HOME.config/
+
+echo -e "${LogText}>> into the local github repo: $gitRepoPath${NoColor}"
