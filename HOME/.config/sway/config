@@ -17,6 +17,10 @@ set $right Right
 #
 # Example configuration: (To UNDERSTEND WHAT IT DOES)
 #
+#exec systemd-inhibit --what=handle-lid-switch sleep infinity
+
+#exec swayidle -w \
+#    before-sleep 'exec swaylock'
 #exec swayidle -w \
 #       \ # timeout 300 'swaylock -f -c 000000' \
 #        timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
@@ -51,11 +55,19 @@ xwayland enable
 output eDP-1 {
     # Mode
     mode 1366x768@60.111Hz
-
+    position 0 0
     # Wallpaper (default Wallpapers are in /usr/share/backgrounds/sway/)
     bg ~/.config/sway/Adomination.png fill
 }
 
+output "Lenovo Group Limited LEN T24d-10 V301B5DZ" {
+    # Mode
+    mode 1920x1200@60Hz
+    position -277 -1200
+    # Wallpaper (default Wallpapers are in /usr/share/backgrounds/sway/)
+    bg ~/.config/sway/Hibana1200.png fill
+    disable
+}
 
 ################ Input configuration
 #
@@ -247,6 +259,7 @@ bindsym $mod+r mode "resize"
 
     bindsym --locked $mod+Control+Delete exec shutdown now
     bindsym --locked $mod+Control+r exec reboot
+    bindsym --locked $mod+Control+RETURN exec swaylock
 
     # Special keys to adjust volume via PulseAudio
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
@@ -265,7 +278,8 @@ bindsym $mod+r mode "resize"
     bindsym Print exec grim
     #bindsym XF86SelectiveScreenshot (PENSARE A QUALCOSA)
 
-
+    #bindsym --locked XF86WakeUp exec swaylock
+    #bindswitch --locked lid:on exec systemctl suspend
 ################ Status Bar
 
 bar {
