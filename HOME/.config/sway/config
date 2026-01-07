@@ -69,6 +69,12 @@ output "Lenovo Group Limited LEN T24d-10 V301B5DZ" {
     disable
 }
 
+output "Vestel Elektronik Sanayi ve Ticaret A. S. 43FHD_LCD_TV Unknown" {
+    mode 1920x1200@60Hz
+    position -1920 0
+    bg ~/.config/sway/Adomination.png fill
+}
+
 ################ Input configuration
 #
 # Example configuration:
@@ -275,8 +281,9 @@ bindsym $mod+r mode "resize"
     bindsym --locked Shift+XF86MonBrightnessUp exec brightnessctl set 1%+
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
-    #bindsym XF86SelectiveScreenshot (PENSARE A QUALCOSA)
+    bindsym Print exec env GRIM_DEFAULT_DIR=$HOME/Images/ grim
+    #bindsym Print exec grim
+    bindsym XF86SelectiveScreenshot exec slurp | env GRIM_DEFAULT_DIR=$HOME/Images/ grim -g -
 
     #bindsym --locked XF86WakeUp exec swaylock
     #bindswitch --locked lid:on exec systemctl suspend
