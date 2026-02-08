@@ -26,6 +26,9 @@ for dirpath in ${homeConfDir[@]}; do
     echo
 done
 
+echo -e "${Title}.bashrc${NoColor}"
+cp -rv "$HOME/.bashrc" "$gitRepoPath/HOME/.bashrc"
+
 #cp -r $HOME/.config/mpv $gitRepoPath/HOME.config/
 #cp -r $HOME/.config/alacritty $gitRepoPath/HOME.config/
 #cp -r $HOME/.config/sway $gitRepoPath/HOME.config/

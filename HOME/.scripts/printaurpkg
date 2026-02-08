@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#
+pacmanString=`pacman --color=always -Qmi | grep -e Nome -e Descrizione -e Motivo`
+
+substituteString=$'\nNome'
+echo "${pacmanString//Nome/"$substituteString"}"

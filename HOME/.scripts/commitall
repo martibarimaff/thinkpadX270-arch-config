@@ -1,0 +1,13 @@
+#! /bin/bash
+
+comment=""
+i=1
+for arg in $*; do
+	if [ $i -lt $# ]; then
+		comment+="${arg} "
+		i=$((i+1))
+	else
+		comment+="${arg}"
+	fi
+done
+git add * && git commit -am "$comment"
