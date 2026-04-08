@@ -107,7 +107,8 @@
     "format-off": "",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
 	"tooltip-format-connected": "{controller_alias}\t{num_connections} connected\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}"
+	"tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
     },
     "keyboard-state": { //user needs to be in the input group or something like that for it to work
         "capslock": true,
@@ -229,6 +230,9 @@
     }, //NON USATI ---------------------------------------------------------------------------
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/language": {
+        "format": "{short} {variant}",
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
