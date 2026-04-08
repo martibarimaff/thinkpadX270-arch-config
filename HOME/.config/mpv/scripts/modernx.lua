@@ -1347,7 +1347,7 @@ layouts = function ()
     lo.style = string.format('%s{\\clip(%f,%f,%f,%f)}', osc_styles.Title,
 								geo.x, geo.y - geo.h, geo.x + geo.w , geo.y + 5)
 	lo.alpha[3] = 0
-    lo.button.maxchars = geo.w / 23
+    lo.button.maxchars = geo.w / 11 --what actually add the title cutoff (...)
 end
 
 -- Validate string type user options

@@ -36,7 +36,7 @@ local o = {
     detect_incorrect_predictions = true,
 
     --observe audio switches and reselect the subtitles when alang changes
-    observe_audio_switches = true,
+    observe_audio_switches = false,
 
     --only select forced subtitles if they are explicitly included in slang
     explicit_forced_subs = false,
