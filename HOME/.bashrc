@@ -13,12 +13,15 @@ PS1='[\u@\h \W]\$ '
 export PATH="$PATH:/home/martino/.scripts"
 
 alias pac='sudo pacman -S --color=auto'
-alias pacrem='sudo pacman -Rsu --color=auto'
+alias pacrem='sudo pacman -Rsc --color=auto'
 alias upd='sudo pacman -Syu --color=auto'
 alias aurupd='yay -Sua --color=auto'
 alias startupErrors='journalctl -b -p 5'
 
 alias aegisub='env GTK_THEME=Adwaita:light,LANG=en_US.UTF-8 aegisub %f & disown'
+
+alias ungelify='wine /home/martino/GitHub/SGHD-ITA/Programmi/Ungelify/Ungelify.exe'
+alias sc3tools='wine /home/martino/GitHub/SGHD-ITA/Programmi/SC3Tools/sc3tools.exe'
 
 alias sddmtest='sddm-greeter-qt6 --test-mode --theme'
 
@@ -37,4 +40,4 @@ alias mozc-settings='/usr/lib/mozc/mozc_tool --mode=config_dialog & disown'
 
 alias tscale='sudo systemctl start tailscaled'
 alias solaion='wol 70:f3:95:15:32:b3'
-alias sssh='ssh 192.168.178.198'
+alias sssh='ssh arch-solaio'
